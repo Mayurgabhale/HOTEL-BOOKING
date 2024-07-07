@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>Mobile No</th>
+                    <th>Email</th>
+                    <th>Aadhar No</th>
+                    <th>City</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customerList; let sr=index">
+                    <td>{{sr + 1}}</td>
+                    <td>
+                        {{customer.name}}
+                    </td>
+                    <td>
+                        {{customer.mobileNo}}
+                    </td>
+                    <td>
+                        {{customer.email}}
+                    </td>
+                    <td>
+                        {{customer.aadharNo}}
+                    </td>
+                    <td>
+                        {{customer.city}}
+                    </td>
+                    <td>
+                        {{customer.address}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

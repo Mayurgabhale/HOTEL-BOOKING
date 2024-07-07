@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-12 mt-2 text-end">
+        <button class="btn btn-primary" (click)="AddNewRoom()">Add New</button>
+        <button class="btn btn-success mx-2" (click)="saveRooms()">Bulk Update</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr</th>
+                    <th>Room Name</th>
+                    <th>AC</th>
+                    <th>Capacity</th>
+                    <th>Active</th>
+                    <th>Tarrif</th>
+                    <th>Extension No</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let room of roomsList; let sr=index">
+                    <td>{{sr + 1}}</td>
+                    <td>
+                        <input type="text" [(ngModel)]="room.roomName" name="roomName{{sr}}" class="form-control">
+                    </td>
+                    <td>
+                        <input type="checkbox" [(ngModel)]="room.isAcAvailable" name="{{sr}}">
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="room.roomCapacity" name="{{sr}}" class="form-control">
+
+                    </td>
+                    <td>
+                        <input type="checkbox" [(ngModel)]="room.isActive" name="{{sr}}">
+
+                    </td>
+                    <td>
+                        <input type="number" [(ngModel)]="room.roomTariff" name="{{sr}}" class="form-control">
+                    
+                    </td>
+                    <td>
+                        <input type="number" [(ngModel)]="room.extensionNo" name="{{sr}}" class="form-control">
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-danger" (click)="onDelete(room.roomId)">Remove</button>
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/dashboard" >Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link active" routerLink="/new-Booking"  >New Booking</a>
+          </li>
+          
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="/rooms" >Rooms</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="/booking-calender" >Booking calender</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="/customers" >Customers</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="/users" >Users</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex">
+          <span class="text-white mx-3">
+           <p>User Name: {{loggedUserData?.userName}} </p>
+
+          </span>
+          <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
+          <button class="btn btn-danger  " type="button" (click)="onLogoff()">LogOff</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
